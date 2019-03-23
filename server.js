@@ -69,7 +69,7 @@ app.post('/register', (req,res)=>{
 
 app.post("/login", (req,res)=>{
 	passport.authenticate('local')(req,res, ()=>{
-		console.log(req.user._id)
+
 		const payload = {
 			id: req.user._id,
 			name: req.user.username

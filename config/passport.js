@@ -11,7 +11,7 @@ let config = require('./utils')
 passport.serializeUser(User.serializeUser() )
 passport.deserializeUser(User.deserializeUser() )
 
-passport.use(new LocalStrategy(User.authenticate() ))
+passport.use(User.createStrategy() )
 
 
 exports.verifyUser = passport.authenticate('jwt', {session: false})
